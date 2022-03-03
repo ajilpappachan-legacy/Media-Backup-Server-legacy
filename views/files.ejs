@@ -3,6 +3,51 @@
 	<%- include("partials/head") %>
 	<body>
 		<%- include("partials/navbar") %>
-		<h1>View/Edit</h1>
+		<div class="container">
+			<h1>View/Edit</h1>
+			<div class="row row-cols-1 row-cols-md-4 g-4">
+				<% files.forEach(file => { %>
+				<div class="col">
+					<% if(file.isDirectory) { %>
+					<a href="/files/<%= file.folder %> ">
+						<div
+							class="card h-100 bg-secondary text-white d-flex justify-content-center align-items-center"
+						>
+							<h5><%= file.name %></h5>
+						</div>
+					</a>
+					<% } else { %>
+					<div class="card h-100">
+						<% if(file.type === "image") { %>
+						<a href="/<%= file.href %>">
+							<img
+								src="/<%= file.href %>"
+								class="card-img-top"
+								alt="<%= file.name %>"
+							/>
+						</a>
+						<% } else if(file.type === "video") { %>
+						<video
+							src="/<%= file.href %>"
+							class="card-img-top"
+							controls="true"
+						></video>
+						<% } else if(!file.isDirectory) { %>
+						<div class="card-img-top bg-secondary"></div>
+						<% } %>
+						<div class="card-body">
+							<p class="card-text"><%= file.name %></p>
+						</div>
+						<div class="card-footer">
+							<a href="<%= file.href %> " download class="btn btn-primary"
+								>Download</a
+							>
+						</div>
+					</div>
+					<% } %>
+				</div>
+				<% }) %>
+			</div>
+		</div>
 	</body>
 </html>
