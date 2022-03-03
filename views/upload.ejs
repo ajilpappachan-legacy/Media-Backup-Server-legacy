@@ -14,10 +14,22 @@
 						id="files"
 						name="files"
 						multiple
+						required
 					/>
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button id="upload-button" type="submit" class="btn btn-primary">
+					Submit
+				</button>
 			</form>
 		</div>
+		<script>
+			const uploadButton = document.querySelector("#upload-button");
+			const form = document.querySelector("form");
+
+			form.addEventListener("submit", (e) => {
+				uploadButton.textContent = "Uploading";
+				uploadButton.disabled = true;
+			});
+		</script>
 	</body>
 </html>

@@ -26,7 +26,7 @@ router.get("/files", (req, res) => {
 });
 
 router.post("/upload", upload.array("files"), (req, res) => {
-	res.send("Uploaded");
+	res.render("completed");
 });
 
 module.exports = router;
