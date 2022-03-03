@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 const homeRouter = require("./routes/home");
+const privateRouter = require("./routes/private");
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 app.use("/", homeRouter);
+app.use("/private", privateRouter);
 
 const port = process.env.PORT;
 app.listen(port, () => {
