@@ -1,0 +1,25 @@
+{
+	"name": "media-backup-server",
+	"version": "1.0.0",
+	"description": "Personal server to access media files through the internet",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ajilpappachan/Media-Backup-Server.git"
+	},
+	"author": "Ajil Pappachan",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ajilpappachan/Media-Backup-Server/issues"
+	},
+	"homepage": "https://github.com/ajilpappachan/Media-Backup-Server#readme",
+	"dependencies": {
+		"dotenv": "^16.0.0",
+		"express": "^4.17.3",
+		"multer": "^1.4.4",
+		"nodemon": "^2.0.15"
+	}
+}
