@@ -3,7 +3,11 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-	res.send("Hello World");
+	res.render("upload");
+});
+
+router.get("/files", (req, res) => {
+	res.render("files");
 });
 
 module.exports = router;
