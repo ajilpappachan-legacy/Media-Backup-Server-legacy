@@ -3,6 +3,21 @@
 	<%- include("partials/head") %>
 	<body>
 		<%- include("partials/navbar") %>
-		<h1>Upload</h1>
+		<div class="container">
+			<h1>Upload</h1>
+			<form action="/upload" method="post" enctype="multipart/form-data">
+				<div class="mb-3">
+					<label for="files" class="form-label">Select Files</label>
+					<input
+						type="file"
+						class="form-control"
+						id="files"
+						name="files"
+						multiple
+					/>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
 	</body>
 </html>
