@@ -29,7 +29,7 @@
 						<% } else if(file.type === "video") { %>
 						<video
 							src="/<%= file.href %>"
-							class="card-img-top"
+							class="card-img-top lazy"
 							controls="true"
 							preload="metadata"
 						></video>
@@ -50,5 +50,6 @@
 				<% }) %>
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
 	</body>
 </html>
